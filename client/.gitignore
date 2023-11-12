@@ -1,4 +1,3 @@
-node_modules/
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -12,11 +11,6 @@ node_modules/
 # production
 /build
 
-# Eleventy
-_dist
-_cache
-/_src/localStyles
-
 # misc
 .DS_Store
 .env.local
@@ -27,4 +21,3 @@ _cache
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
