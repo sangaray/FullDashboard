@@ -4,11 +4,12 @@ import { useSelector } from "react-redux";
 import { useMemo } from "react";
 import { themeSettings } from "theme";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
-  const theme = useMemo(() => createTheme(themeSettings(memo)), [mode]);
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
     <div className="app">
       <BrowserRouter>
