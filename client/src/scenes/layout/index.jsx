@@ -7,7 +7,7 @@ import Sidebar from "components/Sidebar";
 
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
-  const [isSidebarOpen, setisSibarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
     <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
@@ -15,10 +15,13 @@ const Layout = () => {
         isNonMobile={isNonMobile}
         drawerWidth="250px"
         isSidebarOpen={isSidebarOpen}
-        setisSibarOpen={isSidebarOpen}
+        setIsSidebarOpen={isSidebarOpen}
       />
       <Box>
-        <Navbar isSidebarOpen={isSidebarOpen} setisSibarOpen={isSidebarOpen} />
+        <Navbar
+          isSidebarOpen={isSidebarOpen}
+          setIsSidebarOpen={isSidebarOpen}
+        />
         <Outlet />
       </Box>
     </Box>

@@ -33,13 +33,41 @@ import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
 import profileImage from "assets/profile.jpeg";
 
-const Sidebar = ({ drawerWidth, isSidebarOpen, isNonMobile }) => {
+const Sidebar = ({
+  drawerWidth,
+  isSidebarOpen,
+  setIsSidebarOpen,
+  isNonMobile,
+}) => {
   const { pathname } = useLocation();
   const [active, setActive] = useState("");
   const navigate = useNavigate();
   const theme = useTheme();
 
-  return <div>Sidebar</div>;
+  useEffect(() => {
+    setActive(pathname.substring(1));
+  }, [pathname]);
+
+  return (
+    <Box component="nav">
+      <Drawer
+        open={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+        variant="persistent"
+        anchor="left"
+        sx={{
+          width: drawerWidth,
+          "& MuiDrawer-paper": {
+            color: theme.palette.secondary[200],
+            backgroundColor: theme.palette.background.alt,
+            boxSixing: "border-box",
+            borderWidth: isNonMobile ? 0 : "2px",
+            width: drawerWidth,
+          },
+        }}
+      ></Drawer>
+    </Box>
+  );
 };
 
 export default Sidebar;
