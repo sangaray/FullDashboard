@@ -141,6 +141,15 @@ const Sidebar = ({
                 )}
               </FlexBetween>
             </Box>
+            <List>
+              {navItems.map(({ text, icon }) => {
+                if (!icon) {
+                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    {text}
+                  </Typography>;
+                }
+              })}
+            </List>
           </Box>
         </Drawer>
       )}
