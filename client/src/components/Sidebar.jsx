@@ -144,10 +144,24 @@ const Sidebar = ({
             <List>
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
-                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
-                    {text}
-                  </Typography>;
+                  return (
+                    <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                      {text}
+                    </Typography>
+                  );
                 }
+                const lcText = text.toLowerCase();
+
+                return (
+                  <ListItem key={text} disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        navigate(`/${lcText}`);
+                        setActive(lcText);
+                      }}
+                    ></ListItemButton>
+                  </ListItem>
+                );
               })}
             </List>
           </Box>
