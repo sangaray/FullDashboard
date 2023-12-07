@@ -33,6 +33,26 @@ import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
 import profileImage from "assets/profile.jpeg";
 
+const navItems = [
+  {
+    text: "Dashboard",
+    icon: <HomeOutlined />
+  },
+  {
+    text: "Client Facing",
+    icon: null
+  },
+  {
+    text: "Products",
+    icon: <ShoppingCartOutlined />
+  }
+  {
+    text: "Customers",
+    icon: <Groups2Outlined />
+  },
+  
+]
+
 const Sidebar = ({
   drawerWidth,
   isSidebarOpen,
@@ -75,6 +95,11 @@ const Sidebar = ({
                     ECOMVISION
                   </Typography>
                 </Box>
+                {!isNonMobile && (
+                  <IconButton onClick={() => setIsSidebarOpen(isSidebarOpen)}>
+                    <ChevronLeft />
+                  </IconButton>
+                )}
               </FlexBetween>
             </Box>
           </Box>
