@@ -167,7 +167,7 @@ const Sidebar = ({
                         color:
                           active === lcText
                             ? theme.palette.primary[600]
-                            : theme.paletter.secondary[100],
+                            : theme.palette.secondary[100],
                       }}
                     >
                       <ListItemIcon
@@ -176,7 +176,7 @@ const Sidebar = ({
                           color:
                             active === lcText
                               ? theme.palette.primary[600]
-                              : theme.paletter.secondary[100],
+                              : theme.palette.secondary[100],
                         }}
                       ></ListItemIcon>
                     </ListItemButton>
