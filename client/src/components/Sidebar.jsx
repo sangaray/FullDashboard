@@ -178,7 +178,9 @@ const Sidebar = ({
                               ? theme.palette.primary[600]
                               : theme.palette.secondary[100],
                         }}
-                      ></ListItemIcon>
+                      >
+                        {icon}
+                      </ListItemIcon>
                     </ListItemButton>
                   </ListItem>
                 );
