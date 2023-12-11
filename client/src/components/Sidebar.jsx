@@ -159,7 +159,27 @@ const Sidebar = ({
                         navigate(`/${lcText}`);
                         setActive(lcText);
                       }}
-                    ></ListItemButton>
+                      sx={{
+                        backgroundColor:
+                          active === lcText
+                            ? theme.palette.secondary[300]
+                            : "transparent",
+                        color:
+                          active === lcText
+                            ? theme.palette.primary[600]
+                            : theme.paletter.secondary[100],
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          ml: "2rem",
+                          color:
+                            active === lcText
+                              ? theme.palette.primary[600]
+                              : theme.paletter.secondary[100],
+                        }}
+                      ></ListItemIcon>
+                    </ListItemButton>
                   </ListItem>
                 );
               })}
