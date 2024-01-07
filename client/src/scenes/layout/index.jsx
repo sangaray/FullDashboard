@@ -15,12 +15,12 @@ const Layout = () => {
         isNonMobile={isNonMobile}
         drawerWidth="250px"
         isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
       />
       <Box>
         <Navbar
           isSidebarOpen={isSidebarOpen}
-          setIsSidebarOpen={isSidebarOpen}
+          setIsSidebarOpen={setIsSidebarOpen}
         />
         <Outlet />
       </Box>
